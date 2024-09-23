@@ -18,7 +18,7 @@ const showLoading = (state) => {
         submitButton.disabled = true
     }else{
         loadingSVG.style.display = 'none';
-        submitButton.disabled = true
+        submitButton.disabled = false
     }
 }
 
