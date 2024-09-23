@@ -44,7 +44,6 @@ password.addEventListener("change" , () => {
     }
 })
 
-console.log(data);
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
