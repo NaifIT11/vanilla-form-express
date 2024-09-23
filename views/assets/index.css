@@ -1,0 +1,131 @@
+* , *::after , *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url(./font/nunito-regular.woff);
+}
+
+body{
+    font-family: Nunito;
+}
+
+button{
+    cursor: pointer;
+    background-color: transparent;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+img{
+    max-width: 100%;
+}
+
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border: 0.125rem solid crimson;
+    padding: 2rem;
+    border-radius: 0.125rem;
+    width: 30%;
+    @media(width <= 700px){
+        width: 70%;
+    }
+}
+
+.form-header{
+    color: crimson;
+}
+
+form{
+    margin-block: 1rem;
+    display: grid;
+    gap: 2rem;
+}
+
+
+.form-group{
+    display: grid;
+    gap: 10px;
+    input{
+        padding-block: 0.625rem;
+        padding-inline: 0.325rem;
+        font-size: 1rem;
+        outline: 1px solid;
+        border: none;
+        border-radius: 0.125rem;
+        &:focus{
+            outline: 2px solid crimson;
+        }
+    }
+}
+
+button[type="submit"]{
+    padding-block: 0.625rem;
+    background-color: crimson;
+    font-weight: 900;
+    border: 2px solid crimson;
+    color: white;
+    border-radius: 0.125rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.125rem;
+}
+
+
+.message{
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    translate: -50% -50%;
+    padding: 1rem;
+    border-radius: 0.125rem;
+    background-color: crimson;
+    color: white;
+    font-weight: 900;
+    transition: all 0.2s ease-in-out;
+}
+.message.open{
+    top: 2rem;
+}
+
+
+
+
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.loading-svg{
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+
+button[type='submit']:disabled{
+    opacity: 0.5;
+}
