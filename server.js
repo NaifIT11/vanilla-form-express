@@ -23,8 +23,8 @@ const corsOptionsDelegate = (req, callback) => {
   } else {
     corsOptions = { origin: false }
   }
+  callback(null, corsOptions)
 }
-  
 
 
 app.post("/api/auth" , cors(corsOptionsDelegate) , (req , res) => {
@@ -32,10 +32,10 @@ app.post("/api/auth" , cors(corsOptionsDelegate) , (req , res) => {
     const form = req.body;
 
     if(form.email !== "ahmed@gmail.com"){
-        res.json({err: true , message: "invalid data"})
+        res.status(404).json({err: true , message: "invalid data"})
     }
     if(form.password !== "112233"){
-        res.json({err: true , message: "invalid data"})
+        res.status(404).json({err: true , message: "invalid data"})
     }
 
     res.json({err: false , message: "data correct (:"})
