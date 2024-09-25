@@ -16,6 +16,7 @@ body{
 button{
     cursor: pointer;
     background-color: transparent;
+    border: none;
 }
 
 ul[role="list"],
@@ -60,6 +61,7 @@ form{
 
 
 .form-group{
+    position: relative;
     display: grid;
     gap: 10px;
     input{
@@ -128,4 +130,30 @@ button[type="submit"]{
 
 button[type='submit']:disabled{
     opacity: 0.5;
+}
+
+
+
+
+.open-svg , .close-svg{
+    color: rgb(0 0 0 / 0.7);
+}
+
+.password-btn{
+    position: absolute;
+    top: 2.4rem;
+    right: .5rem;
+}
+
+.close-svg{
+    display: none;
+}
+
+.password-btn.open{
+    .open-svg{
+        display: none !important;
+    }
+    .close-svg{
+        display: block !important;
+    }
 }

@@ -75,3 +75,15 @@ form.addEventListener("submit", (e) => {
     };
     sendData();
 });
+
+//show and hide password
+const showPasswordBtn = document.querySelector("button.password-btn");
+
+showPasswordBtn.addEventListener("click" , () => {
+    if(password.type === 'password'){
+        password.type = 'text';
+    }else{
+        password.type = 'password';
+    }
+    showPasswordBtn.classList.toggle("open");
+});
