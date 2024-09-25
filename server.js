@@ -1,5 +1,6 @@
 const express = require("express");
-const path = require("path")
+const path = require("path");
+const cors = require('cors')
 const bodyParser = require('body-parser')
 app =  express();
 
@@ -13,7 +14,20 @@ app.get("/" , (req , res) => {
     res.sendFile(path.join(__dirname , "views/index.html"))
 });
 
-app.post("/api/auth" , (req , res) => {
+
+const allowlist = ['http://localhost:5000'] //change domain in production
+const corsOptionsDelegate = (req, callback) => {
+  let corsOptions;
+  if (allowlist.indexOf(req.header('Origin')) !== -1) {
+    corsOptions = { origin: true }
+  } else {
+    corsOptions = { origin: false }
+  }
+}
+  
+
+
+app.post("/api/auth" , cors(corsOptionsDelegate) , (req , res) => {
     console.log(`POST /api/auth`);
     const form = req.body;
 
