@@ -79,7 +79,9 @@ form.addEventListener("submit", (e) => {
 //show and hide password
 const showPasswordBtn = document.querySelector("button.password-btn");
 
-showPasswordBtn.addEventListener("click" , () => {
+showPasswordBtn.addEventListener("click" , (e) => {
+    e.preventDefault();
+    
     if(password.type === 'password'){
         password.type = 'text';
     }else{
